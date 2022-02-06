@@ -153,27 +153,9 @@ export const adminSideBarItems = [
     index: "users",
   },
   {
-    header: "Institutions",
-    link: "/admin/institutions",
-    index: "institutions",
-    exact: false,
-  },
-  {
-    header: "Apps",
-    link: "/admin/apps",
-    index: "apps",
-    exact: false,
-  },
-  {
-    header: "Roles",
-    link: "/admin/roles",
-    index: "roles",
-    exact: false,
-  },
-  {
-    header: "Permisions",
-    link: "/admin/permissions",
-    index: "permissions",
+    header: "Settings",
+    link: "/admin/settings",
+    index: "settings",
     exact: false,
   },
 ];
