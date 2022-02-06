@@ -1,0 +1,110 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+.DragApp {
+  text-align: center;
+  display: flex;
+  //   height: 400px;
+  justify-content: space-between;
+}
+
+// .App-logo {
+//   animation: App-logo-spin infinite 20s linear;
+//   height: 80px;
+// }
+
+// .App-header {
+//   background-color: #222;
+//   height: 150px;
+//   padding: 20px;
+//   color: white;
+// }
+
+// .App-title {
+//   font-size: 1.5em;
+// }
+
+// .App-intro {
+//   font-size: large;
+// }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.done {
+  //   border: 1px solid black;
+  /* padding: 10px; */
+  border-radius: 6px;
+  margin-top: 20px;
+  background-color: #888888;
+  float: right;
+  width: 44%;
+  //   box-shadow: 10px 10px 8px #888888;
+}
+
+.todos {
+  //   border: 1px solid black;
+  /* padding: 10px; */
+  border-radius: 6px;
+  margin-top: 20px;
+  background-color: #888888;
+  float: left;
+  width: 44%;
+  //   box-shadow: 10px 10px 8px #888888;
+}
+
+.header {
+  border-radius: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid;
+  position: relative;
+  margin-bottom: 10px;
+  background-color: #040620;
+}
+
+.on-drag {
+  border: solid 3px #040620;
+  background-color: white;
+  opacity: 0.2;
+  box-shadow: 10px 10px 8px blue;
+}
+
+.items {
+  overflow-y: scroll;
+  height: 370px;
+}
+
+.item {
+  padding: 10px;
+  /* border: 2px solid black; */
+  margin: 10px;
+  box-shadow: 2px 2px 2px #040620;
+  background-color: azure;
+  color: black;
+  font-family: "sans serif";
+}
+
+.items::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.items::-webkit-scrollbar-track {
+  background: white; /* color of the tracking area */
+}
+
+.items::-webkit-scrollbar-thumb {
+  background-color: #040620; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #040620; /* creates padding around scroll thumb */
+}
