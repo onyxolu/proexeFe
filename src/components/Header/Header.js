@@ -96,12 +96,6 @@ class Header extends React.Component {
   }
 
   render() {
-    const user = this.props.currentUser;
-    const avatar =
-      user && user.avatar && user.avatar.length && user.avatar[0].publicUrl;
-
-    const firstUserLetter =
-      user && (user.firstName || user.email)[0].toUpperCase();
     return (
       <Navbar className={`d-print-none ${s.root}`}>
         {/* <UncontrolledAlert className={`${s.alert} mr-3 d-lg-down-none animate__animated animate__bounceIn animate__delay-1s`}>

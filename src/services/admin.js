@@ -32,7 +32,6 @@ AdminService.prototype.upsertUser = function (data) {
       Authorization: `Bearer ${getToken()}`,
     },
   };
-  console.log(data);
 
   return axios.post(url, data, config);
 };

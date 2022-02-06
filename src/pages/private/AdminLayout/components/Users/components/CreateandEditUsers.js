@@ -54,16 +54,15 @@ export default class CreateandEditUsers extends Component {
     try {
       const response = await AdminService.upsertUser(user);
       let message = `User Successfully ${
-        this.props.upsert_action == "update" ? "Updated" : "Created"
+        this.props.upsert_action === "update" ? "Updated" : "Created"
       }`;
-      const userData = user;
-      if (this.props.upsert_action == "update") {
+      let userData = user;
+      if (this.props.upsert_action === "update") {
         userData = this.updateCurrentUser(user);
       }
       this.props.updateUser(userData, response.data);
       AppService.successToast(message);
     } catch (err) {
-      console.log(err);
       AppService.errorToast("Sorry Something went wrong");
     }
     this.setState({
@@ -93,8 +92,7 @@ export default class CreateandEditUsers extends Component {
 
   componentDidMount() {
     const { currentUser, upsert_action } = this.props;
-    console.log(upsert_action, this.userForm);
-    if (upsert_action == "update") {
+    if (upsert_action === "update") {
       setTimeout(() => {
         this.updateValue(currentUser);
       }, 100);
@@ -105,7 +103,7 @@ export default class CreateandEditUsers extends Component {
   }
 
   render() {
-    const { createText, updateText, upsert_action } = this.props;
+    const { upsert_action } = this.props;
     return (
       <div>
         <Modal
@@ -113,7 +111,7 @@ export default class CreateandEditUsers extends Component {
           toggle={() => this.props.toggle("showModal")}
         >
           <ModalHeader toggle={() => this.props.toggle("showModal")}>
-            Create User
+            {`${upsert_action === "update" ? "Update" : "Create"} User`}
           </ModalHeader>
           <ModalBody>
             <Formsy onValidSubmit={this.submit} ref={this.userForm}>

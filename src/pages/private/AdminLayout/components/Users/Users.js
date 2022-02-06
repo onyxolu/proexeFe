@@ -78,13 +78,13 @@ export default class Users extends Component {
   };
 
   deleteUser = async (id, close) => {
-    console.log(id);
     this.setState({
       isDeletingUser: true,
       idToDelete: id,
     });
     try {
       const response = await AdminService.deleteUser(id);
+      console.log(response);
       this.handleDelete(id, close);
     } catch (err) {
       AppService.errorToast("Sorry Something went wrong");
@@ -107,7 +107,7 @@ export default class Users extends Component {
   findIdx = (id) => {
     const users = this.state.users;
     for (let i = 0; i < users.length; i++) {
-      if (users[i].id == id) {
+      if (users[i].id === id) {
         return i;
       }
     }
@@ -121,7 +121,6 @@ export default class Users extends Component {
     });
     try {
       const response = await AdminService.getAllUsers();
-      console.log(response.data);
       const users = this.formatUserdata(response.data);
       this.setState({
         users: users,
@@ -157,7 +156,6 @@ export default class Users extends Component {
       showModal: false,
     });
     let users = this.state.users;
-    console.log(user, "user", response);
     if (user["id"]) {
       const idx = this.findIdx(user.id);
       users[idx] = user;

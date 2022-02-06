@@ -9,7 +9,7 @@ import s from "./Sidebar.module.scss";
 import LinksGroup from "./LinksGroup";
 
 import { changeActiveSidebarItem } from "../../actions/navigation";
-import { adminSideBarItems, hmoSideBarItems } from "../../config";
+import { adminSideBarItems } from "../../config";
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -83,7 +83,6 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    const { sideBarItems } = this.props;
     return (
       <nav
         className={cx(s.root)}
@@ -92,7 +91,8 @@ class Sidebar extends React.Component {
         }}
       >
         <header className={s.logo}>
-          <a href="https://demo.flatlogic.com/light-blue-react/">Proexe</a>
+          Proexe
+          {/* <a href="https://demo.flatlogic.com/light-blue-react/">Proexe</a> */}
         </header>
         <ul className={s.nav}>
           {this.state.sideBarItems.map((item, id) => (
