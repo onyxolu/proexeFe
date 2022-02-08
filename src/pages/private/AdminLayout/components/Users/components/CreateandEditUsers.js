@@ -79,6 +79,7 @@ export default class CreateandEditUsers extends Component {
   };
 
   submit = (data) => {
+    console.log("hi", data);
     this.upsertUser(data);
   };
 
@@ -148,17 +149,23 @@ export default class CreateandEditUsers extends Component {
                   Cancel
                 </Button>
               </div>
+              {/* <Button
+                color="default"
+                onClick={() => this.props.toggle("showModal")}
+              >
+                Close
+              </Button>
+              <Button type="submit" color="primary">
+                Validate & Submit
+                {this.state.isLoading ? (
+                  <i className="fa fa-spinner fa-spin" />
+                ) : (
+                  ""
+                )}
+              </Button> */}
             </Formsy>
           </ModalBody>
-          <ModalFooter>
-            <Button
-              color="secondary"
-              onClick={() => this.props.toggle("showModal")}
-            >
-              Close
-            </Button>
-            <Button color="primary">Save changes</Button>
-          </ModalFooter>
+          <ModalFooter></ModalFooter>
         </Modal>
       </div>
     );

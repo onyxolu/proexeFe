@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import AppDynamicTable from "../../../../../components/AppShared/AppDynamicTable/AppDynamicTable";
-import { pageConfigs } from "../../../../../config";
 import CreateandEditUsers from "./components/CreateandEditUsers";
 import AdminService from "../../../../../services/admin";
 import AppService from "../../../../../services/app";
 
-export const AdminUsersTableCols = [
+const userConfig = {
+  usersList: "Users",
+  create: "Create New User",
+  update: "Update User",
+};
+
+const AdminUsersTableCols = [
   {
     dataField: "id",
     dataType: "id",
@@ -182,7 +187,6 @@ export default class Users extends Component {
   };
 
   render() {
-    const userConfig = pageConfigs.admin.users;
     const title = userConfig.usersList;
     const createText = userConfig.create;
     const updateText = userConfig.update;
